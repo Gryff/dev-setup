@@ -1,0 +1,13 @@
+meetingbar
+homebrew/cask-fonts/font-fira-code
+docker
+spotify
+zoom
+miro
+intellij-idea
+iterm2
+muzzle
+slack
+rectangle
+signal
+aws-vault
