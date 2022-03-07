@@ -99,10 +99,6 @@ function findTree() {
   tree -I ${TREE_IGNORE} -a -P "$1" --prune
 }
 
-function githubToken() {
-  export GITHUB_TOKEN=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
-}
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
