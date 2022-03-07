@@ -1,0 +1,24 @@
+" press jk instead of Esc to exit insert mode
+:imap jk <Esc>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" I found out what leader is
+:let mapleader = " "
+
+:map <Leader>o o<Esc>k
+:map <Leader>O O<Esc>j
+
+" change js require to import
+:map <Leader>im 0cwimport<Esc>f=ct'from <Esc>f)x
+" change js import to require
+:map <Leader>re 0cwconst<Esc>/from<CR>ct'= require(<Esc>f'f'a)<Esc>
+
+set ideajoin
+Plug 'tpope/vim-surround'
+
+set ignorecase
+
