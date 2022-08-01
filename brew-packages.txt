@@ -17,3 +17,7 @@ libsass
 starship
 awscli
 jq
+exa
+fd
+bat
+zola
