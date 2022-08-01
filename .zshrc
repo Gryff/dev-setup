@@ -25,7 +25,7 @@ alias getdockerip=get_docker_container_ip
 alias nrt="npm run test"
 alias gbd=git_branch_delete_like
 alias gsl=git_switch_like
-alias gpreen=git_preen
+alias gpreen=./zsh_scripts/git_preen.sh
 alias glv="git log | vim -R -"
 
 # set PATH so it includes user's private bin if it exists
@@ -55,27 +55,6 @@ function git_switch_like() {
     grep "$1" | \
     xargs -I % sh -c 'git switch %'
   fi
-}
-
-function git_preen() {
-  BRANCH_TO_DELETE=`git branch --show-current`
-  MAIN_EXISTS=`git show-ref refs/heads/main`
-  if [ -n "$MAIN_EXISTS" ]; then
-    git switch main
-  else
-    git switch master
-  fi
-
-  git pull
-
-  if [ -f yarn.lock ]; then
-    yarn
-  fi
-
-  echo ""
-  git remote prune origin
-  git branch -D "$BRANCH_TO_DELETE"
-  git branch
 }
 
 function kill_by_name() {
