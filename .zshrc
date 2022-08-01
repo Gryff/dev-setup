@@ -25,7 +25,7 @@ alias getdockerip=get_docker_container_ip
 alias nrt="npm run test"
 alias gbd=git_branch_delete_like
 alias gsl=git_switch_like
-alias gpreen=./zsh_scripts/git_preen.sh
+alias gpreen=~/dev-setup/zsh_scripts/git_preen.sh # TODO
 alias glv="git log | vim -R -"
 
 # set PATH so it includes user's private bin if it exists
@@ -35,7 +35,6 @@ fi
 
 # rbenv
 PATH="$HOME/.rbenv/shims:$PATH"
-
 
 eval "$(starship init zsh)"
 
