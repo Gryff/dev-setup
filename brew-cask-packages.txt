@@ -11,3 +11,4 @@ slack
 rectangle
 signal
 aws-vault
+android-studio
