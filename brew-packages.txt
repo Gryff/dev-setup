@@ -22,3 +22,4 @@ fd
 bat
 zola
 tunnelblick
+pinentry-mac
