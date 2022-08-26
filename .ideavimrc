@@ -21,4 +21,5 @@ set ideajoin
 Plug 'tpope/vim-surround'
 
 set ignorecase
+set hls
 
