@@ -26,7 +26,7 @@ alias getdockerip=get_docker_container_ip
 alias nrt="npm run test"
 alias gbd=git_branch_delete_like
 alias gsl=git_switch_like
-alias gpreen=~/dev-setup/zsh_scripts/git_preen.sh # TODO
+alias gpreen=sh ~/dev-setup/zsh_scripts/git_preen.sh # TODO
 alias glv="git log | vim -R -"
 
 # set PATH so it includes user's private bin if it exists
@@ -96,3 +96,6 @@ export AWS_DEFAULT_REGION=eu-west-2
 # git-run (gr) autocompletion
 . <(gr completion)
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
