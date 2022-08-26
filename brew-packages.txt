@@ -23,3 +23,5 @@ bat
 zola
 tunnelblick
 pinentry-mac
+adr-tools
+go

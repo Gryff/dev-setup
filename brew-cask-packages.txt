@@ -12,3 +12,4 @@ rectangle
 signal
 aws-vault
 android-studio
+reactotron
