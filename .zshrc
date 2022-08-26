@@ -1,4 +1,5 @@
-alias editalias="vim ~/.zshrc"
+alias editalias="vim ~/dev-setup/.zshrc"
+alias reload_zshrc="rm ~/.zshrc && ln ~/dev-setup/.zshrc ~/.zshrc"
 alias v="vim"
 alias e="emacs -nw"
 alias ll="ls -alrth"
