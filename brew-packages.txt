@@ -25,3 +25,6 @@ tunnelblick
 pinentry-mac
 adr-tools
 go
+nu
+fzf
+maccy

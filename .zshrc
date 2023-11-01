@@ -96,6 +96,12 @@ export AWS_DEFAULT_REGION=eu-west-2
 # git-run (gr) autocompletion
 . <(gr completion)
 
+function githubToken() {
+  export GITHUB_TOKEN="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"
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
