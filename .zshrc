@@ -26,8 +26,12 @@ alias getdockerip=get_docker_container_ip
 alias nrt="npm run test"
 alias gbd=git_branch_delete_like
 alias gsl=git_switch_like
-alias gpreen=sh ~/dev-setup/zsh_scripts/git_preen.sh # TODO
 alias glv="git log | vim -R -"
+
+# load my custom functions
+fpath=( ~/dev-setup/zsh_scripts "${fpath[@]}" )
+
+for FILE in ~/dev-setup/zsh_scripts/*; do autoload -Uz "$FILE"; done
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
@@ -95,10 +99,6 @@ export AWS_DEFAULT_REGION=eu-west-2
 
 # git-run (gr) autocompletion
 . <(gr completion)
-
-function githubToken() {
-  export GITHUB_TOKEN="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"
-}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

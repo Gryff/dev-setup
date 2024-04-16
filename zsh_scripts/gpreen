@@ -1,9 +1,8 @@
-#!/usr/bin/env bash
-
-set -eux pipefail
-
 BRANCH_TO_DELETE=`git branch --show-current`
 MAIN_EXISTS=`git show-ref refs/heads/main`
+
+echo "running git preen"
+
 if [ -n "$MAIN_EXISTS" ]; then
   git switch main
 else
@@ -14,6 +13,10 @@ git pull
 
 if [ -f yarn.lock ]; then
   yarn
+fi
+
+if [ -f package-lock.json ]; then
+  npm install
 fi
 
 echo ""

@@ -1,0 +1,10 @@
+# A shortcut to go to the circle ci pipeline of the current directory repo
+#
+# Would be good to expand this later to have more capabilities
+# Maybe trigger pipeline for current branch?
+
+github_account=$(git config --get remote.origin.url | awk -F'[:/]' '{gsub(".git", "", $NF); print $(NF-1)}')
+repository_name=$(git config --get remote.origin.url | awk -F'[:/]' '{gsub(".git", "", $NF); print $NF}')
+
+open "https://app.circleci.com/pipelines/github/$github_account/$repository_name"
+
