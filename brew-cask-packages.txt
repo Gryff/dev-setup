@@ -13,3 +13,7 @@ signal
 aws-vault
 android-studio
 reactotron
+zed@preview
+gather
+obs
+google-cloud-sdk

@@ -17,6 +17,7 @@ libsass
 starship
 awscli
 jq
+yq
 exa
 fd
 bat
@@ -28,3 +29,6 @@ go
 nu
 fzf
 maccy
+asdf
+bruno
+imagemagick
