@@ -39,7 +39,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # rbenv
-PATH="$HOME/.rbenv/shims:$PATH"
+# PATH="$HOME/.rbenv/shims:$PATH"
 
 eval "$(starship init zsh)"
 
@@ -105,3 +105,25 @@ export AWS_DEFAULT_REGION=eu-west-2
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# intellij path
+export PATH=$PATH:/Applications/IntelliJ\ IDEA.app/Contents/MacOS
+
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+# bun completions
+[ -s "/Users/gryff/.bun/_bun" ] && source "/Users/gryff/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
