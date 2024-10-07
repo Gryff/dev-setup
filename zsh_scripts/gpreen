@@ -19,8 +19,11 @@ if [ -f package-lock.json ]; then
   npm install
 fi
 
+if [ -f bun.lockb ]; then
+  bun install
+fi
+
 echo ""
 git remote prune origin
 git branch -D "$BRANCH_TO_DELETE"
 git branch
-
