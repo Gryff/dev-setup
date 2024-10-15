@@ -32,3 +32,4 @@ maccy
 asdf
 bruno
 imagemagick
+colima
