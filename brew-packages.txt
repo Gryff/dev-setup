@@ -20,6 +20,7 @@ jq
 yq
 exa
 fd
+sd
 bat
 zola
 tunnelblick
@@ -33,3 +34,6 @@ asdf
 bruno
 imagemagick
 colima
+docker-compose
+docker-buildx
+dnsmasq
