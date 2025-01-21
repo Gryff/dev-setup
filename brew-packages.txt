@@ -37,4 +37,4 @@ colima
 docker-compose
 docker-buildx
 dnsmasq
-postgresql
+postgresql@15
