@@ -38,3 +38,4 @@ docker-compose
 docker-buildx
 dnsmasq
 postgresql@15
+fastly/tap/fastly
