@@ -119,7 +119,7 @@ export PATH=$PATH:/Applications/IntelliJ\ IDEA.app/Contents/MacOS
 
 . "$HOME/.atuin/bin/env"
 
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # bun completions
 [ -s "/Users/gryff/.bun/_bun" ] && source "/Users/gryff/.bun/_bun"
@@ -127,3 +127,11 @@ eval "$(atuin init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOMEBREW_PREFIX/opt/postgresql@15/bin:$PATH"
+
+# some docker stuff now colima is in the mix
+mkdir -p ~/.docker/cli-plugins
+ln -sfn "$HOMEBREW_PREFIX/opt/docker-buildx/bin/docker-buildx" ~/.docker/cli-plugins/docker-buildx
+ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ~/.docker/cli-plugins/docker-compose
+

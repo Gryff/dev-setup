@@ -39,3 +39,5 @@ docker-buildx
 dnsmasq
 postgresql@15
 fastly/tap/fastly
+derailed/k9s/k9s
+exercism
