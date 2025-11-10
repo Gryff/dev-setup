@@ -23,6 +23,10 @@ if [ -f bun.lockb ]; then
   bun install
 fi
 
+if [ -f poetry.lock ]; then
+  poetry install
+fi
+
 echo ""
 git remote prune origin
 git branch -D "$BRANCH_TO_DELETE"
