@@ -18,3 +18,4 @@ gather
 obs
 google-cloud-sdk
 ghostty
+finicky
