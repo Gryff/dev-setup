@@ -106,7 +106,6 @@ export AWS_DEFAULT_REGION=eu-west-2
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -135,3 +134,15 @@ mkdir -p ~/.docker/cli-plugins
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-buildx/bin/docker-buildx" ~/.docker/cli-plugins/docker-buildx
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ~/.docker/cli-plugins/docker-compose
 
+# pnpm
+export PNPM_HOME="/Users/gryff/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+ZSHRC_DIR="$(dirname ${(%):-%x})"
+if [ -f "$ZSHRC_DIR/.zshrc.local" ]; then
+  source "$ZSHRC_DIR/.zshrc.local"
+fi
