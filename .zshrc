@@ -142,7 +142,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-ZSHRC_DIR="$(dirname ${(%):-%x})"
+ZSHRC_DIR="$HOME/dev-setup"
 if [ -f "$ZSHRC_DIR/.zshrc.local" ]; then
   source "$ZSHRC_DIR/.zshrc.local"
 fi
