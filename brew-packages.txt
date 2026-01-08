@@ -42,3 +42,4 @@ fastly/tap/fastly
 derailed/k9s/k9s
 exercism
 cloudentity/tap/oauth2c
+deno
