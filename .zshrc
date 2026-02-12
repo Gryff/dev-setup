@@ -146,3 +146,7 @@ ZSHRC_DIR="$HOME/dev-setup"
 if [ -f "$ZSHRC_DIR/.zshrc.local" ]; then
   source "$ZSHRC_DIR/.zshrc.local"
 fi
+
+# claude wanted this
+export PATH="$HOME/.local/bin:$PATH"
+
