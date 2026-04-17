@@ -44,3 +44,4 @@ exercism
 cloudentity/tap/oauth2c
 deno
 openvpn
+pi-coding-agent
