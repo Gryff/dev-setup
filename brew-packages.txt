@@ -22,7 +22,6 @@ exa
 fd
 sd
 bat
-zola
 tunnelblick
 pinentry-mac
 adr-tools
