@@ -19,3 +19,4 @@ obs
 google-cloud-sdk
 ghostty
 finicky
+my-monkeys/tap/opensuperwhisper
