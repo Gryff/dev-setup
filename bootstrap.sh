@@ -7,6 +7,7 @@
 #   ./bootstrap.sh brew     # only install Homebrew + packages
 #   ./bootstrap.sh link     # only (re)link dotfiles
 #   ./bootstrap.sh mise     # only install mise
+#   ./bootstrap.sh atuin    # only install atuin
 #
 set -euo pipefail
 
@@ -48,6 +49,16 @@ install_mise() {
   fi
 }
 
+install_atuin() {
+  if command -v atuin >/dev/null 2>&1; then
+    log "atuin already installed."
+  else
+    log "Installing atuin..."
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+  fi
+  # atuin's shell init lives in the linked .zshrc; nothing else to do here.
+}
+
 link_dotfiles() {
   log "Hard-linking dotfiles into $HOME..."
   local backup_dir="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
@@ -78,14 +89,16 @@ main() {
   case "${1:-all}" in
     brew) install_brew_packages ;;
     mise) install_mise ;;
+    atuin) install_atuin ;;
     link) link_dotfiles ;;
     all)
       install_brew_packages
       install_mise
+      install_atuin
       link_dotfiles
       log "Done. Open a new shell (or 'source ~/.zshrc') to pick everything up."
       ;;
-    *) echo "usage: $0 [all|brew|mise|link]" >&2; exit 1 ;;
+    *) echo "usage: $0 [all|brew|mise|atuin|link]" >&2; exit 1 ;;
   esac
 }
 
