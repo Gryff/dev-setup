@@ -1,5 +1,4 @@
 meetingbar
-homebrew/cask-fonts/font-fira-code
 docker
 spotify
 zoom
@@ -18,3 +17,4 @@ google-cloud-sdk
 ghostty
 finicky
 my-monkeys/tap/opensuperwhisper
+1password-cli

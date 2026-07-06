@@ -18,7 +18,6 @@ starship
 awscli
 jq
 yq
-exa
 fd
 sd
 bat
