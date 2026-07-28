@@ -33,6 +33,12 @@ fpath=( ~/dev-setup/zsh_scripts "${fpath[@]}" )
 
 for FILE in ~/dev-setup/zsh_scripts/*; do autoload -Uz "$FILE"; done
 
+# initialise the completion system (provides compdef) and the bash-compat
+# layer (provides `complete`). Must run before anything registers completions.
+autoload -Uz compinit bashcompinit
+compinit
+bashcompinit
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
   PATH="$HOME/bin:$PATH"
