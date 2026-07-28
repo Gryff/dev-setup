@@ -8,6 +8,7 @@
 #   ./bootstrap.sh link     # only (re)link dotfiles
 #   ./bootstrap.sh mise     # only install mise
 #   ./bootstrap.sh atuin    # only install atuin
+#   ./bootstrap.sh rust     # only install rust (rustup)
 #
 set -euo pipefail
 
@@ -59,6 +60,17 @@ install_atuin() {
   # atuin's shell init lives in the linked .zshrc; nothing else to do here.
 }
 
+install_rust() {
+  if command -v rustup >/dev/null 2>&1; then
+    log "rustup already installed; updating toolchain..."
+    rustup update
+  else
+    log "Installing rust via rustup..."
+    # --no-modify-path: the linked .zshenv already sources ~/.cargo/env.
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+  fi
+}
+
 link_dotfiles() {
   log "Hard-linking dotfiles into $HOME..."
   local backup_dir="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
@@ -90,15 +102,17 @@ main() {
     brew) install_brew_packages ;;
     mise) install_mise ;;
     atuin) install_atuin ;;
+    rust) install_rust ;;
     link) link_dotfiles ;;
     all)
       install_brew_packages
       install_mise
       install_atuin
+      install_rust
       link_dotfiles
       log "Done. Open a new shell (or 'source ~/.zshrc') to pick everything up."
       ;;
-    *) echo "usage: $0 [all|brew|mise|atuin|link]" >&2; exit 1 ;;
+    *) echo "usage: $0 [all|brew|mise|atuin|rust|link]" >&2; exit 1 ;;
   esac
 }
 
