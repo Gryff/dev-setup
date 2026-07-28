@@ -17,4 +17,5 @@ google-cloud-sdk
 ghostty
 finicky
 my-monkeys/tap/opensuperwhisper
-1password-cli
+1password
+session-manager-plugin

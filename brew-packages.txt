@@ -43,3 +43,4 @@ cloudentity/tap/oauth2c
 deno
 openvpn
 pi-coding-agent
+1password-cli
