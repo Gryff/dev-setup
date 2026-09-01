@@ -32,7 +32,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'altercation/vim-colors-solarized'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -42,9 +41,20 @@ Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
+" deal with changes in OS light/dark mode
+function! SyncBackground()
+  let l:mode = system("defaults read -g AppleInterfaceStyle 2>/dev/null")
+  if l:mode =~ "Dark"
+    set background=dark
+  else
+    set background=light
+  endif
+endfunction
+
+call SyncBackground()
+autocmd FocusGained * call SyncBackground()
+
 syntax enable
-set background=dark
-"colorscheme solarized
 
 set wildignore+=*/node_modules/*,*/.git/*,*.so,*.swp,*.zip,*.exe,*.dll
 set wildignore+=*\\tmp\\*,*.swo,.cabal-sandbox,\#*\#
@@ -80,4 +90,3 @@ nnoremap <c-l> <c-w>l
 :map <Leader>im 0cwimport<Esc>f=ct'from <Esc>f)x
 " change js import to require
 :map <Leader>re 0cwconst<Esc>/from<CR>ct'= require(<Esc>f'f'a)<Esc>
-
