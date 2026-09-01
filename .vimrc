@@ -7,11 +7,18 @@ set backspace=indent,eol,start
 set incsearch
 set hlsearch
 set ignorecase
+set smartcase
 
 set number
 
+" Yank to / paste from the macOS system clipboard by default
+set clipboard=unnamed
+
+" Filetype-aware plugins and indentation (built into Vim)
+filetype plugin indent on
+
 " Indentation
-set smartindent
+set autoindent
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -73,7 +80,7 @@ set ttimeoutlen=0
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
 " press jk instead of Esc to exit insert mode
-:imap jk <Esc>
+:inoremap jk <Esc>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -83,10 +90,10 @@ nnoremap <c-l> <c-w>l
 " I found out what leader is
 :let mapleader = " "
 
-:map <Leader>o o<Esc>k
-:map <Leader>O O<Esc>j
+:nnoremap <Leader>o o<Esc>k
+:nnoremap <Leader>O O<Esc>j
 
 " change js require to import
-:map <Leader>im 0cwimport<Esc>f=ct'from <Esc>f)x
+:nnoremap <Leader>im 0cwimport<Esc>f=ct'from <Esc>f)x
 " change js import to require
-:map <Leader>re 0cwconst<Esc>/from<CR>ct'= require(<Esc>f'f'a)<Esc>
+:nnoremap <Leader>re 0cwconst<Esc>/from<CR>ct'= require(<Esc>f'f'a)<Esc>
