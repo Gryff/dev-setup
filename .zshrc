@@ -39,11 +39,6 @@ autoload -Uz compinit bashcompinit
 compinit
 bashcompinit
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-  PATH="$HOME/bin:$PATH"
-fi
-
 # rbenv
 # PATH="$HOME/.rbenv/shims:$PATH"
 
@@ -109,47 +104,20 @@ export AWS_DEFAULT_REGION=eu-west-2
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# intellij path
-export PATH=$PATH:/Applications/IntelliJ\ IDEA.app/Contents/MacOS
-
-
-. "$HOME/.atuin/bin/env"
-
 eval "$(atuin init zsh --disable-up-arrow)"
 
 # bun completions
 [ -s "/Users/gryff/.bun/_bun" ] && source "/Users/gryff/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export PATH="$HOMEBREW_PREFIX/opt/postgresql@15/bin:$PATH"
 
 # some docker stuff now colima is in the mix
 mkdir -p ~/.docker/cli-plugins
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-buildx/bin/docker-buildx" ~/.docker/cli-plugins/docker-buildx
 ln -sfn "$HOMEBREW_PREFIX/opt/docker-compose/bin/docker-compose" ~/.docker/cli-plugins/docker-compose
 
-# pnpm
-export PNPM_HOME="/Users/gryff/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 ZSHRC_DIR="$HOME/dev-setup"
 if [ -f "$ZSHRC_DIR/.zshrc.local" ]; then
   source "$ZSHRC_DIR/.zshrc.local"
 fi
-
-# claude wanted this
-export PATH="$HOME/.local/bin:$PATH"
 
 # mise
 if command -v mise >/dev/null 2>&1; then
